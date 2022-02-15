@@ -26,6 +26,7 @@ public class ProductService implements IProductService {
 
     @Override
     public Mono<Product> create(Product product) {
+        product.setName(product.getName().toUpperCase());
         product.setDate(LocalDate.now());
         return repository.save(product);
     }
@@ -34,6 +35,8 @@ public class ProductService implements IProductService {
     public Mono<Product> update(String id, Product product) {
         return repository.findById(id).flatMap(newProduct -> {
             product.setId(newProduct.getId());
+            product.setName(product.getName().toUpperCase());
+            product.setDate(newProduct.getDate());
             return repository.save(product);
         }).switchIfEmpty(Mono.empty());
     }

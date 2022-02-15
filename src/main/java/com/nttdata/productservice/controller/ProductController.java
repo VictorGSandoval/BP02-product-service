@@ -3,7 +3,6 @@ package com.nttdata.productservice.controller;
 
 import com.nttdata.productservice.model.Product;
 import com.nttdata.productservice.service.IProductService;
-import com.nttdata.productservice.service.ProductService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 import reactor.core.publisher.Flux;
@@ -11,7 +10,7 @@ import reactor.core.publisher.Mono;
 
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("/product")
+@RequestMapping("/products")
 public class ProductController {
 
     private final IProductService service;

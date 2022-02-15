@@ -1,0 +1,6 @@
+server:
+  port: 8091
+spring:
+  data:
+    mongodb:
+      uri: mongodb+srv://aimar:NTT12345678@clusterproduct.mpycl.mongodb.net/myFirstDatabase?retryWrites=true&w=majority
